@@ -99,6 +99,13 @@ class NoteService {
   }
 
   static async updateCurrentNote(description, status, userId, id, img) {
+    const { error } = Validation.noteDescription({
+      description,
+    });
+
+    if (error) {
+      return SystemErrorService.error('Validations errors', errorTypes.Validation);
+    }
     try {
       const filter = {
         $and: [{ owner: { $eq: ObjectId(userId) } }, { _id: { $eq: ObjectId(id) } }],
