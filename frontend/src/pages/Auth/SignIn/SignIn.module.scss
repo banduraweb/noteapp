@@ -1,0 +1,39 @@
+.formWrapper {
+  width: 600px;
+  height: 300px;
+  margin: 50px 0;
+  box-shadow: 0px 5px 10px rgba(89, 109, 134, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.signInWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.promo {
+  width: 50vw;
+  height: 50vh;
+  background-image: url('../../../assets/images/notes.png');
+  background-size: cover;
+}
+
+@media screen and (max-width: 576px) {
+  .formWrapper {
+    width: 100vw;
+    box-shadow: none;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .promo {
+    width: 100vw;
+  }
+  .signInWrapper {
+    flex-direction: column;
+  }
+}
